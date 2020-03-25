@@ -3,9 +3,9 @@ Contributors: bradt, deliciousbrains
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=5VPMGLLK94XJC
 Tags: Export WordPress, Migrate WordPress, WordPress database plugin, WordPress migration plugin, WP Migrate DB
 Requires at least: 3.6
-Tested up to: 5.2
+Tested up to: 5.4
 Requires PHP: 5.4
-Stable tag: 1.0.11
+Stable tag: 1.0.13
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -141,7 +141,7 @@ Ok, so maybe we're biased, but if you've used other tools, you'll know they can 
 
 Let's look at a popular find and replace script for serialized data called Search Replace DB, with this you have to upload the script, run it manually and it doesn't have a backup option or email support.
 
-A quick comparison with Updraft Plus—while Updraft Plus provides a lot of functionality, it's primarily a backup plugin with a premium option for migrating your website. Compare that to WP Migrate DB -- the site migration tool used and recommended by professional WordPress developers.
+A quick comparison with Updraft Plusâ€”while Updraft Plus provides a lot of functionality, it's primarily a backup plugin with a premium option for migrating your website. Compare that to WP Migrate DB -- the site migration tool used and recommended by professional WordPress developers.
 
 *The Themes and Plugins add-on for WP Migrate DB Pro from @dliciousbrains is pure genius. So many use cases I didn't think of when they released it. Mainly: 1) Staging sites 2) Plugin support Saves me time every week.* - Clifton Griffin, Development Lead at Objectiv
 
@@ -156,7 +156,7 @@ You can! While cloning a WordPress site can be difficult, WP Migrate DB makes it
 **Step 3:** Export the database.
 **Step 4:** Import the database into your new site.
 
-And it's as simple as that, your data has been cloned onto the new site, ready to go. Pssst… If you have [WP Migrate DB Pro](https://deliciousbrains.com/wp-migrate-db-pro/upgrade/?utm_campaign=WP%2BMigrate%2BDB%2BPro%2BUpgrade&utm_source=wordpress.org&utm_medium=free%2Bplugin%2Blisting), it's even easier to clone your entire website, including all your media, themes, and plugins.
+And it's as simple as that, your data has been cloned onto the new site, ready to go. Pssstâ€¦ If you have [WP Migrate DB Pro](https://deliciousbrains.com/wp-migrate-db-pro/upgrade/?utm_campaign=WP%2BMigrate%2BDB%2BPro%2BUpgrade&utm_source=wordpress.org&utm_medium=free%2Bplugin%2Blisting), it's even easier to clone your entire website, including all your media, themes, and plugins.
 
 = Is FTP a thing of the past? =
 
@@ -186,6 +186,18 @@ Find out all relevant [pricing information over on our official site](https://de
 3. Saving the exported database
 
 == Changelog ==
+
+= WP Migrate DB 1.0.13 - 2020-03-17  =
+* Bug fix: Usage of `get_magic_quotes_gpc()` triggers a warning on PHP 7.4+
+* Bug fix: WordPress `home` and `site_url` values are set incorrectly on multisite installs with the 'ms_files_rewriting' option set
+* Bug fix: PHP warning during JSON find & replace if search or replace value is empty
+
+= WP Migrate DB 1.0.12 - 2020-02-26  =
+* Bug fix: Sanitize $_GET parameter when triggering download for export
+* Bug fix: Sanitize $_GET parameter when downloading backup file
+* Bug fix: Call to undefined end_ajax() method
+* Bug fix: Use of PHP compact() function not working with PHP 7.3+
+* Bug fix: Search & replace did not work with JSON encoded content in the `wp_posts` table
 
 = WP Migrate DB 1.0.11 - 2019-04-30  =
 * Bug fix: `WP_Filesystem` initialized on all wp-admin pages
